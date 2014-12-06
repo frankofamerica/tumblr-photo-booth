@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Example Of Saving HTML5 Canvas Into File
+</title>
+<script type="text/javascript">
+
+function saveViaAJAX()
+{
+	var testCanvas = document.getElementById("testCanvas");  
+	var canvasData = testCanvas.toDataURL("image/png");
+	var postData = "canvasData="+canvasData;
+	var debugConsole= document.getElementById("debugConsole");  
+	debugConsole.value=canvasData;
+
+	//alert("canvasData ="+canvasData );	  
+	var ajax = new XMLHttpRequest();
+	ajax.open("POST",'writefile.php',true);    
+	ajax.setRequestHeader('Content-Type', 'canvas/upload');
+	//ajax.setRequestHeader('Content-TypeLength', postData.length);
+
+
+	ajax.onreadystatechange=function()
+  	{
+		if (ajax.readyState == 4)
+		{ 
+			console.log('SAVED');
+		}
+  	}
+
+	ajax.send(postData);  
+}
+
+</script>
+</head>
+
+<body>
+The image below consists of randomly generated circles drawn on HTML 5 canvas object. 
+<br>You can then press the Save button to save the image.  
+<p>
+ 
+     <div>  
+        <canvas id="testCanvas" width="300" height="300"></canvas>
+      </div>	  
+      <div>
+	<textarea id="debugConsole" rows="10" cols="60">Data</textarea>
+       <p><button onclick="saveViaAJAX();">Save Via AJAX</button>   <p>
+	<div id="debugFilenameConsole">Wait for a while after clicking the button and the filename of the image will be shown to you.  </div>
+      </div>
+	<script type="text/javascript">
+		var canvas = document.getElementById("testCanvas");
+		if (canvas.getContext) 
+		{
+			var canvasContext = canvas.getContext("2d");
+			for (i=0; i<150; i++)
+			{
+				canvasContext.fillStyle="rgb("+(parseInt(Math.random()*255))+","+(parseInt(Math.random()*255))+","+(parseInt(Math.random()*255))+")";
+				canvasContext.beginPath();
+				canvasContext.arc(Math.random()*350,Math.random()*350,Math.random()*20, 0,Math.PI*2,true);
+				canvasContext.fill();
+			}
+		}  
+	</script>  
+  </body>
+
+</html>
