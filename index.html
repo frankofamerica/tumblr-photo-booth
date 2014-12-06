@@ -18,7 +18,7 @@
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/styles.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -27,17 +27,21 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="wrapper">
-      <center>
-	  	<video id="webcam" width="200" height="200"></video>
-		<br>
-		<input type="button" id="snapPicture" value="Sanp A Picture!" />
-		<p>
-		<canvas id="capture" style="display:none;"></canvas>
-		<img id="canvasImg" alt="save image">
+
+  	<video id="webcam" width="200" height="200"></video>
+	
+	<div class="instructions">
+		<h3>Click to take picture!</h3>
+	</div>
+	<!--<input type="button" id="snapPicture" value="Sanp A Picture!" />-->
+	<canvas id="capture" style="display:none;"></canvas>
+	<img id="canvasImg">
+	
+	<div class="pic-options hide">
+		<button class="btn retake">Retake</button>
+		<button class="btn saveit">Save Pic</button>
+	</div>
 		
-		<button class="saveit">Save Pic</button>
-		
-	  </center>
     </div> <!-- /container -->        
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>

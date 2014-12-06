@@ -1,9 +1,22 @@
-var photoButton = $('#snapPicture');
+var photoButton = $('#webcam');
 var postData;
 
 photoButton.on('click', function(){
-	picCapture();
+	hideElement($('.instructions'));
+	
+	setTimeout(function() {
+		console.log("PIC!");
+	      picCapture();
+	}, 5000);
 });
+
+var hideElement = function (ele) {
+	ele.addClass('hide');
+};
+
+var showElement = function (ele) {
+	ele.removeClass('hide');
+};
 
 navigator.getUserMedia ||
 	(navigator.getUserMedia = navigator.mozGetUserMedia ||
@@ -48,7 +61,8 @@ function picCapture () {
 	
 	postData = "canvasData="+dataURL;
 
-	 
+	hideElement($('#webcam'));
+	showElement($('.pic-options'));
 }
 
 var newFileName;
