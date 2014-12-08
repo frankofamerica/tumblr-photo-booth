@@ -1,46 +1,52 @@
-body {
-	.hide {
-		display:none;
-	}
+html {
+	overflow-x:hidden;
 	
-	.show {
-		display:block;
-	}
-	
-	font-size:10px;
-	padding:0;
-	
-	.wrapper {
-		video {
-			width:100%;
-			height:100%;
-		}
+	body {
+		font-size:10px;
+		padding:0;
+		margin:0;
 		
-		#canvasImg {
-			position:absolute;
-			top:0;
-			width:100%;
+		.hide {
+			display:none;
 		}
+	
+		.show {
+			display:block;
+		}
+	
+		.wrapper {
+			video, object {
+				left:0;
+				position:absolute;
+				top:0;
+			}
 		
-		.instructions {
-			position: absolute;
-			top:5em;
-			left:5em;
-			background: rgba(63, 103, 104, 0.5); 
-			padding:2em;
-			color:white;
+			#canvasImg {
+				position:absolute;
+				top:0;
+				width:100%;
+			}
+		
+			.instructions {
+				position: absolute;
+				top:5em;
+				left:5em;
+				background: rgba(63, 103, 104, 0.5); 
+				padding:2em;
+				color:white;
 			
-			h3 {
-				font-family:"Trebuchet MS", Helvetica, sans-serif;
-				text-transform:uppercase;
-				font-size:3em;
+				h3 {
+					font-family:"Trebuchet MS", Helvetica, sans-serif;
+					text-transform:uppercase;
+					font-size:3em;
+				}
+			}
+		
+			.pic-options {
+				top:50px;
+				left:50px;
+				position:absolute;
 			}
 		}
-		
-		.pic-options {
-			top:50px;
-			left:50px;
-			position:absolute;
-		}
-	}
+	}	
 }
