@@ -5,15 +5,32 @@ $(function(){
 
 var photoButton = $('#webcam');
 var postData;
-
+var sec = 5;
+	
 photoButton.on('click', function(){
 	hideElement($('.instructions'));
 	
-	setTimeout(function() {
-		console.log("PIC!");
-	      picCapture();
-	}, 5000);
+	initCountdown();
 });
+
+var initCountdown = function() {
+	var timer = setInterval(function() {
+	    $('.countdown h1').animate({
+	        opacity: 0.25,
+	        fontSize: '5em'
+	    }, 500, function() {
+	        $('.countdown h1').css('opacity', 1);
+	        $('.countdown h1').css('font-size', '1em');
+	        $('.countdown h1').text(sec--);
+	    })
+
+	    if (sec == -1) {
+	        $('.countdown').fadeOut('fast');
+	        clearInterval(timer);
+			picCapture();
+	    }
+	}, 500);
+};
 
 var hideElement = function (ele) {
 	ele.addClass('hide');
