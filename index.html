@@ -23,46 +23,43 @@
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <div class="wrapper">
-	<button class="btn fullScreenBtn">Launch Fullscreen</button>
+		<button class="btn fullScreenBtn">Launch Fullscreen</button>
 	
-  	<video id="webcam" width="200" height="200"></video>
+	    <div class="wrapper clickable">
+			<video id="webcam" width="200" height="200"></video>
 	
-	<div class="countdown">
-		<h1></h1>
-	</div>
+		<div class="countdown">
+			<h1></h1>
+		</div>
 	
-	<div class="instructions">
-		<h3>Click to take picture!</h3>
-	</div>
-	<!--<input type="button" id="snapPicture" value="Sanp A Picture!" />-->
-	<canvas id="capture" style="display:none;"></canvas>
-	<img id="canvasImg">
+		<div class="instructions">
+			<h3>Click to take picture!</h3>
+		</div>
+		<!--<input type="button" id="snapPicture" value="Sanp A Picture!" />-->
+		<canvas id="capture" style="display:none;"></canvas>
+		<img id="canvasImg">
 	
-	<div class="pic-options hide">
-		<button class="btn retake">Retake</button>
-		<button class="btn saveit">Save Pic</button>
-	</div>
+		<div class="pic-options hide">
+			<button class="btn retake">Retake</button>
+			<button class="btn saveit">Save Pic</button>
+		</div>
 		
-    </div> <!-- /container -->        
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+	    </div> <!-- /container -->        
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
-		<script src="js/vendor/jquery.maximage.min.js"></script>
-        <script src="js/main.js"></script>
+	        <script src="js/vendor/bootstrap.min.js"></script>
+			<script src="js/vendor/jquery.maximage.min.js"></script>
+	        <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+	        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	        <script>
+	            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	            e.src='//www.google-analytics.com/analytics.js';
+	            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	            ga('create','UA-XXXXX-X');ga('send','pageview');
+	        </script>
     </body>
 </html>

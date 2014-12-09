@@ -14,12 +14,15 @@ html {
 		.show {
 			display:block;
 		}
-	
+		
+		.fullScreenBtn {
+			position:fixed;
+			z-index:1000;
+			top:10px;
+			left:10px;
+		}
+		
 		.wrapper {
-			.fullScreenBtn {
-				position:fixed;
-				z-index:1000;
-			}
 			
 			video, object {
 				left:0;
