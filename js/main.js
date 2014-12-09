@@ -137,7 +137,15 @@ $('.fullScreenBtn').on('click', function () {
   } else if(element.msRequestFullscreen) {
     element.msRequestFullscreen();
   }
-  
-  $(this).css('display', 'none');
+});
 
+$(document).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+    var event = state ? 'FullscreenOn' : 'FullscreenOff';
+	console.log(event);
+	if(event == "FullscreenOff"){
+		$('.fullScreenBtn').css('display', 'block');
+	}else if(event == "FullscreenOn"){
+		$('.fullScreenBtn').css('display', 'none');
+	} 
 });
