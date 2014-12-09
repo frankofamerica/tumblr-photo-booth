@@ -6,7 +6,8 @@ $(function(){
 var photoButton = $('#webcam');
 var postData;
 var sec = 5;
-	
+var element = document.documentElement;
+
 photoButton.on('click', function(){
 	hideElement($('.instructions'));
 	
@@ -124,3 +125,19 @@ function postToTumblr(img) {
 	});
 
 };
+
+
+$('.fullScreenBtn').on('click', function () {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if(element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+  
+  $(this).css('display', 'none');
+
+});

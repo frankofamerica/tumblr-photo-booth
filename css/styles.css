@@ -18,30 +18,35 @@ html body .show {
   display: block;
 }
 /* line 19, ../sass/styles.scss */
+html body .wrapper .fullScreenBtn {
+  position: fixed;
+  z-index: 1000;
+}
+/* line 24, ../sass/styles.scss */
 html body .wrapper video, html body .wrapper object {
   left: 0;
   position: absolute;
   top: 0;
 }
-/* line 25, ../sass/styles.scss */
+/* line 30, ../sass/styles.scss */
 html body .wrapper #canvasImg {
   position: absolute;
   top: 0;
   width: 100%;
 }
-/* line 31, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
 html body .wrapper .countdown {
   position: absolute;
   z-index: 10;
   width: 100%;
 }
-/* line 36, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
 html body .wrapper .countdown h1 {
   display: table;
   font-size: 5em;
   margin: 0 auto;
 }
-/* line 43, ../sass/styles.scss */
+/* line 48, ../sass/styles.scss */
 html body .wrapper .instructions {
   position: absolute;
   top: 5em;
@@ -50,12 +55,12 @@ html body .wrapper .instructions {
   padding: 2em;
   color: white;
 }
-/* line 51, ../sass/styles.scss */
+/* line 56, ../sass/styles.scss */
 html body .wrapper .instructions h3 {
   text-transform: uppercase;
   font-size: 3em;
 }
-/* line 57, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 html body .wrapper .pic-options {
   top: 50px;
   left: 50px;

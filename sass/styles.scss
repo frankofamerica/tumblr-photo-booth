@@ -16,6 +16,11 @@ html {
 		}
 	
 		.wrapper {
+			.fullScreenBtn {
+				position:fixed;
+				z-index:1000;
+			}
+			
 			video, object {
 				left:0;
 				position:absolute;
