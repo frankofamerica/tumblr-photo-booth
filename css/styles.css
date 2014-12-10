@@ -1,193 +1,3 @@
-/* line 4, ../sass/styles.scss */
-html {
-  overflow-x: hidden;
-}
-/* line 7, ../sass/styles.scss */
-html body {
-  font-size: 10px;
-  padding: 0;
-  margin: 0;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-/* line 13, ../sass/styles.scss */
-html body .hide {
-  display: none;
-}
-/* line 17, ../sass/styles.scss */
-html body .show {
-  display: block;
-}
-/* line 21, ../sass/styles.scss */
-html body .fullScreenBtn {
-  position: fixed;
-  z-index: 1000;
-  top: 10px;
-  left: 10px;
-}
-/* line 30, ../sass/styles.scss */
-html body .wrapper video, html body .wrapper object {
-  left: 0;
-  position: absolute;
-  top: 0;
-  margin-top: -238.5px !important;
-}
-/* line 37, ../sass/styles.scss */
-html body .wrapper #canvasImg {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-/* line 43, ../sass/styles.scss */
-html body .wrapper .countdown {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-}
-/* line 48, ../sass/styles.scss */
-html body .wrapper .countdown h1 {
-  display: table;
-  font-size: 5em;
-  margin: 0 auto;
-}
-/* line 55, ../sass/styles.scss */
-html body .wrapper .take-pic-btn {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-/* line 63, ../sass/styles.scss */
-html body .wrapper .instructions {
-  position: absolute;
-  top: 5em;
-  left: 5em;
-  background: rgba(63, 103, 104, 0.5);
-  padding: 2em;
-  color: white;
-}
-/* line 71, ../sass/styles.scss */
-html body .wrapper .instructions h3 {
-  text-transform: uppercase;
-  font-size: 3em;
-}
-/* line 77, ../sass/styles.scss */
-html body .wrapper .pic-options {
-  top: 50px;
-  left: 50px;
-  position: absolute;
-}
-
-/* line 87, ../sass/styles.scss */
-.overlay-container {
-  width: 100%;
-  z-index: 20;
-  position: absolute;
-  display: none;
-}
-/* line 93, ../sass/styles.scss */
-.overlay-container.saving-img {
-  display: block;
-}
-/* line 97, ../sass/styles.scss */
-.overlay-container .overlay {
-  width: 70em;
-  height: 40em;
-  margin: 0 auto;
-  background: white;
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  -ms-border-radius: 2em;
-  border-radius: 2em;
-  padding: 3em;
-}
-/* line 107, ../sass/styles.scss */
-.overlay-container .overlay .img-saving h1,
-.overlay-container .overlay .tumblr-saving h1 {
-  display: inline-block;
-}
-/* line 111, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving,
-.overlay-container .overlay .tumblr-saving .saving {
-  display: inline-block;
-  width: auto;
-  margin: 5em auto;
-  margin: 0 auto;
-}
-/* line 116, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving .anim-saving,
-.overlay-container .overlay .tumblr-saving .saving .anim-saving {
-  float: left;
-  margin: 0 1em;
-  width: 2em;
-  height: 2em;
-  background: #6DBB95;
-  -webkit-border-radius: 5em;
-  -moz-border-radius: 5em;
-  -ms-border-radius: 5em;
-  border-radius: 5em;
-  text-indent: -9999px;
-  -webkit-animation: bounce 1s infinite ease-in-out;
-  /* Chrome, Safari, Opera */
-  animation: bounce 1s infinite ease-in-out;
-  -webkit-animation-delay: .25s;
-  animation-delay: .25s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-/* line 136, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving .anim-saving:first-child,
-.overlay-container .overlay .tumblr-saving .saving .anim-saving:first-child {
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-}
-/* line 141, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving .anim-saving:last-child,
-.overlay-container .overlay .tumblr-saving .saving .anim-saving:last-child {
-  -webkit-animation-delay: .5s;
-  animation-delay: .5s;
-}
-/* line 147, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving .fa-check-circle,
-.overlay-container .overlay .tumblr-saving .saving .fa-check-circle {
-  color: #6DBB95;
-  font-size: 5em;
-}
-/* line 152, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving .anim-result,
-.overlay-container .overlay .tumblr-saving .saving .anim-result {
-  display: none;
-}
-/* line 158, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving.success .anim-result,
-.overlay-container .overlay .tumblr-saving .saving.success .anim-result {
-  display: block;
-  -webkit-animation: zoomIn 1s;
-  /* Chrome, Safari, Opera */
-  animation: zoomIn 1s;
-}
-/* line 164, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving.success .anim-saving,
-.overlay-container .overlay .tumblr-saving .saving.success .anim-saving {
-  display: none;
-}
-/* line 171, ../sass/styles.scss */
-.overlay-container .overlay .tumblr-saving {
-  opacity: .4;
-}
-/* line 174, ../sass/styles.scss */
-.overlay-container .overlay .tumblr-saving.uploading {
-  opacity: 1;
-}
-/* line 177, ../sass/styles.scss */
-.overlay-container .overlay .tumblr-saving.uploading .saving {
-  display: inline-block;
-}
-/* line 182, ../sass/styles.scss */
-.overlay-container .overlay .tumblr-saving .saving {
-  display: none;
-}
-
 /* Chrome, Safari, Opera */
 @-webkit-keyframes bounce {
   0%, 100% {
@@ -231,4 +41,246 @@ html body .wrapper .pic-options {
     -webkit-transform: scale(1);
     opacity: 1;
   }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+/* line 5, ../sass/styles.scss */
+html {
+  overflow-x: hidden;
+}
+/* line 8, ../sass/styles.scss */
+html body {
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+/* line 14, ../sass/styles.scss */
+html body .hide {
+  display: none;
+}
+/* line 18, ../sass/styles.scss */
+html body .show {
+  display: block;
+}
+/* line 22, ../sass/styles.scss */
+html body .fullScreenBtn {
+  position: fixed;
+  z-index: 1000;
+  top: 10px;
+  left: 10px;
+}
+/* line 29, ../sass/styles.scss */
+html body .color-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: white;
+  z-index: 10;
+  display: none;
+}
+/* line 40, ../sass/styles.scss */
+html body .wrapper video, html body .wrapper object {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+/* line 46, ../sass/styles.scss */
+html body .wrapper #canvasImg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* line 52, ../sass/styles.scss */
+html body .wrapper .countdown {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  padding-top: 35px;
+}
+/* line 58, ../sass/styles.scss */
+html body .wrapper .countdown .look-here {
+  text-align: center;
+  background: rgba(228, 76, 61, 0.75);
+  margin: 0 auto;
+  width: 30em;
+  padding: 1em;
+  color: white;
+}
+/* line 66, ../sass/styles.scss */
+html body .wrapper .countdown .look-here:before {
+  content: "";
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid rgba(228, 76, 61, 0.75);
+  top: -47px;
+}
+/* line 78, ../sass/styles.scss */
+html body .wrapper .countdown h1 {
+  display: table;
+  font-size: 5em;
+  margin: 0 auto;
+}
+/* line 85, ../sass/styles.scss */
+html body .wrapper .take-pic-btn {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* line 93, ../sass/styles.scss */
+html body .wrapper .instructions {
+  position: absolute;
+  top: 5em;
+  left: 5em;
+  background: rgba(63, 103, 104, 0.5);
+  padding: 2em;
+  color: white;
+}
+/* line 101, ../sass/styles.scss */
+html body .wrapper .instructions h3 {
+  text-transform: uppercase;
+  font-size: 3em;
+}
+/* line 107, ../sass/styles.scss */
+html body .wrapper .pic-options {
+  top: 50px;
+  left: 50px;
+  position: absolute;
+}
+
+/* line 117, ../sass/styles.scss */
+.overlay-container {
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  position: absolute;
+  display: none;
+  padding-top: 5em;
+}
+/* line 125, ../sass/styles.scss */
+.overlay-container.saving-img {
+  display: block;
+  animation-name: slideDown;
+  -webkit-animation-name: slideDown;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+}
+/* line 138, ../sass/styles.scss */
+.overlay-container .overlay {
+  width: 70em;
+  height: 40em;
+  margin: 0 auto;
+  background: white;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  border-radius: 2em;
+  padding: 3em;
+}
+/* line 148, ../sass/styles.scss */
+.overlay-container .overlay .img-saving h1,
+.overlay-container .overlay .tumblr-saving h1 {
+  display: inline-block;
+}
+/* line 152, ../sass/styles.scss */
+.overlay-container .overlay .img-saving .saving,
+.overlay-container .overlay .tumblr-saving .saving {
+  display: inline-block;
+  width: auto;
+  margin: 5em auto;
+  margin: 0 auto;
+}
+/* line 157, ../sass/styles.scss */
+.overlay-container .overlay .img-saving .saving .anim-saving,
+.overlay-container .overlay .tumblr-saving .saving .anim-saving {
+  float: left;
+  margin: 0 1em;
+  width: 2em;
+  height: 2em;
+  background: #6DBB95;
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  -ms-border-radius: 5em;
+  border-radius: 5em;
+  text-indent: -9999px;
+  -webkit-animation: bounce 1s infinite ease-in-out;
+  /* Chrome, Safari, Opera */
+  animation: bounce 1s infinite ease-in-out;
+  -webkit-animation-delay: .25s;
+  animation-delay: .25s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* line 177, ../sass/styles.scss */
+.overlay-container .overlay .img-saving .saving .anim-saving:first-child,
+.overlay-container .overlay .tumblr-saving .saving .anim-saving:first-child {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+/* line 182, ../sass/styles.scss */
+.overlay-container .overlay .img-saving .saving .anim-saving:last-child,
+.overlay-container .overlay .tumblr-saving .saving .anim-saving:last-child {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+/* line 188, ../sass/styles.scss */
+.overlay-container .overlay .img-saving .saving .fa-check-circle,
+.overlay-container .overlay .tumblr-saving .saving .fa-check-circle {
+  color: #6DBB95;
+  font-size: 5em;
+}
+/* line 193, ../sass/styles.scss */
+.overlay-container .overlay .img-saving .saving .anim-result,
+.overlay-container .overlay .tumblr-saving .saving .anim-result {
+  display: none;
+}
+/* line 199, ../sass/styles.scss */
+.overlay-container .overlay .img-saving .saving.success .anim-result,
+.overlay-container .overlay .tumblr-saving .saving.success .anim-result {
+  display: block;
+  -webkit-animation: zoomIn 1s;
+  /* Chrome, Safari, Opera */
+  animation: zoomIn 1s;
+}
+/* line 205, ../sass/styles.scss */
+.overlay-container .overlay .img-saving .saving.success .anim-saving,
+.overlay-container .overlay .tumblr-saving .saving.success .anim-saving {
+  display: none;
+}
+/* line 212, ../sass/styles.scss */
+.overlay-container .overlay .tumblr-saving {
+  opacity: .4;
+}
+/* line 215, ../sass/styles.scss */
+.overlay-container .overlay .tumblr-saving.uploading {
+  opacity: 1;
+}
+/* line 218, ../sass/styles.scss */
+.overlay-container .overlay .tumblr-saving.uploading .saving {
+  display: inline-block;
+}
+/* line 223, ../sass/styles.scss */
+.overlay-container .overlay .tumblr-saving .saving {
+  display: none;
 }

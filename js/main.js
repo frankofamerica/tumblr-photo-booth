@@ -5,6 +5,7 @@ $( document ).ready(function() {
 	var capturedImg = $('#canvasImg');
 	var takePicBtn = $('.take-pic-btn');
 	var instructions = $('.instructions');
+	var picOptions = $('.pic-options');
 	var countdown = $('.countdown');
 	var fullScreenBtn = $('.fullScreenBtn');
 	var imgSaving = $('.img-saving');
@@ -32,6 +33,7 @@ $( document ).ready(function() {
 		//save image that was captured
 		$('.saveit').on('click', function(){
 			overlay.addClass('saving-img');
+			hideElement(picOptions);
 			
 			var ajax = new XMLHttpRequest();
 			ajax.open("POST",'writefile.php',true);    
@@ -99,9 +101,7 @@ $( document ).ready(function() {
 	function resetStage () {
 		showElement($('#webcam'));
 		showElement(instructions);
-		showElement(countdown);
-		$('.countdown h1').text("");
-		hideElement($('.pic-options'));
+		hideElement(picOptions);
 	
 		capturedImg.attr("src", "");
 	
@@ -111,14 +111,14 @@ $( document ).ready(function() {
 	//init countdown to take pic
 	function initCountdown() {
 		console.log('countdown!');
+		showElement(countdown);
 		var sec = 3;
+		$('.countdown h1').text('LOOK HERE!');
 		var timer = setInterval(function() {
 		    $('.countdown h1').animate({
-		        opacity: 0.25,
-		        fontSize: '5em'
-		    }, 500, function() {
+		        opacity: 0
+		    }, 1000, function() {
 		        $('.countdown h1').css('opacity', 1);
-		        $('.countdown h1').css('font-size', '1em');
 		        $('.countdown h1').text(sec--);
 		    })
 
@@ -178,7 +178,7 @@ $( document ).ready(function() {
 		postData = "canvasData="+dataURL;
 
 		hideElement($('#webcam'));
-		showElement($('.pic-options'));
+		showElement(picOptions);
 	}
 
 	function postToTumblr(img) {
