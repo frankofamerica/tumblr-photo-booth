@@ -11,6 +11,7 @@ $( document ).ready(function() {
 	var imgSaving = $('.img-saving');
 	var tumblrSaving = $('.tumblr-saving');
 	var overlay = $('.overlay-container ');
+	var thankyou = $('.thank-you');
 	
 	detectMedia();
 
@@ -209,6 +210,8 @@ $( document ).ready(function() {
 	
 	function imgUploaded() {
 		tumblrSaving.find('.saving').addClass('success');
+		thankyou.text('Photo saved and uploaded!');
+		thankyou.css('padding', '1em');
 		
 		var timer = setInterval(function() {
 			clearInterval(timer);
@@ -221,5 +224,7 @@ $( document ).ready(function() {
 		overlay.removeClass('saving-img');
 		imgSaving.find('.saving').removeClass('success');
 		tumblrSaving.find('.saving').removeClass('success');
+		thankyou.text('');
+		thankyou.css('padding', '0');
 	};
 });

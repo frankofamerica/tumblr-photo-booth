@@ -197,13 +197,19 @@ html body .wrapper .pic-options {
   -ms-border-radius: 2em;
   border-radius: 2em;
   padding: 3em;
+  text-align: center;
 }
-/* line 148, ../sass/styles.scss */
+/* line 147, ../sass/styles.scss */
+.overlay-container .overlay .thank-you {
+  background: #E44C3D;
+  color: white;
+}
+/* line 154, ../sass/styles.scss */
 .overlay-container .overlay .img-saving h1,
 .overlay-container .overlay .tumblr-saving h1 {
   display: inline-block;
 }
-/* line 152, ../sass/styles.scss */
+/* line 158, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving,
 .overlay-container .overlay .tumblr-saving .saving {
   display: inline-block;
@@ -211,7 +217,7 @@ html body .wrapper .pic-options {
   margin: 5em auto;
   margin: 0 auto;
 }
-/* line 157, ../sass/styles.scss */
+/* line 163, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .anim-saving,
 .overlay-container .overlay .tumblr-saving .saving .anim-saving {
   float: left;
@@ -232,30 +238,30 @@ html body .wrapper .pic-options {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 177, ../sass/styles.scss */
+/* line 183, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .anim-saving:first-child,
 .overlay-container .overlay .tumblr-saving .saving .anim-saving:first-child {
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
 }
-/* line 182, ../sass/styles.scss */
+/* line 188, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .anim-saving:last-child,
 .overlay-container .overlay .tumblr-saving .saving .anim-saving:last-child {
   -webkit-animation-delay: .5s;
   animation-delay: .5s;
 }
-/* line 188, ../sass/styles.scss */
+/* line 194, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .fa-check-circle,
 .overlay-container .overlay .tumblr-saving .saving .fa-check-circle {
   color: #6DBB95;
   font-size: 5em;
 }
-/* line 193, ../sass/styles.scss */
+/* line 199, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .anim-result,
 .overlay-container .overlay .tumblr-saving .saving .anim-result {
   display: none;
 }
-/* line 199, ../sass/styles.scss */
+/* line 205, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving.success .anim-result,
 .overlay-container .overlay .tumblr-saving .saving.success .anim-result {
   display: block;
@@ -263,24 +269,24 @@ html body .wrapper .pic-options {
   /* Chrome, Safari, Opera */
   animation: zoomIn 1s;
 }
-/* line 205, ../sass/styles.scss */
+/* line 211, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving.success .anim-saving,
 .overlay-container .overlay .tumblr-saving .saving.success .anim-saving {
   display: none;
 }
-/* line 212, ../sass/styles.scss */
+/* line 218, ../sass/styles.scss */
 .overlay-container .overlay .tumblr-saving {
   opacity: .4;
 }
-/* line 215, ../sass/styles.scss */
+/* line 221, ../sass/styles.scss */
 .overlay-container .overlay .tumblr-saving.uploading {
   opacity: 1;
 }
-/* line 218, ../sass/styles.scss */
+/* line 224, ../sass/styles.scss */
 .overlay-container .overlay .tumblr-saving.uploading .saving {
   display: inline-block;
 }
-/* line 223, ../sass/styles.scss */
+/* line 229, ../sass/styles.scss */
 .overlay-container .overlay .tumblr-saving .saving {
   display: none;
 }

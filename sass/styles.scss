@@ -142,6 +142,12 @@ html {
 		background:white;
 		@include border-radius(2em);
 		padding:3em;
+		text-align:center;
+		
+		.thank-you {
+			background:#E44C3D;
+			color:white;
+		}
 		
 		.img-saving,
 		.tumblr-saving {
