@@ -210,14 +210,14 @@ $( document ).ready(function() {
 	
 	function imgUploaded() {
 		tumblrSaving.find('.saving').addClass('success');
-		thankyou.text('Photo saved and uploaded!');
+		thankyou.html('Photo saved and uploaded!<br>Enjoy the party!');
 		thankyou.css('padding', '1em');
 		
 		var timer = setInterval(function() {
 			clearInterval(timer);
 			resetOverlay();
 			resetStage();
-		}, 2000);
+		}, 4000);
 	};
 	
 	function resetOverlay() {
