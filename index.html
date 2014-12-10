@@ -9,7 +9,8 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+		
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
@@ -24,27 +25,62 @@
     </head>
     <body>
 		<button class="btn fullScreenBtn">Launch Fullscreen</button>
-	
-	    <div class="wrapper clickable">
-			<video id="webcam" width="200" height="200"></video>
-	
-		<div class="countdown">
-			<h1></h1>
-		</div>
-	
-		<div class="instructions">
-			<h3>Click to take picture!</h3>
-		</div>
-		<!--<input type="button" id="snapPicture" value="Sanp A Picture!" />-->
-		<canvas id="capture" style="display:none;"></canvas>
-		<img id="canvasImg">
-	
-		<div class="pic-options hide">
-			<button class="btn retake">Retake</button>
-			<button class="btn saveit">Save Pic</button>
+		
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="img-saving">
+					<h1><i class="fa fa-picture-o"></i>&nbsp;Saving Image&nbsp;</h1>
+					<div class="saving">
+						<div class="anim-saving">saving...</div>
+						<div class="anim-saving">saving...</div>
+						<div class="anim-saving">saving...</div>
+			
+						<div class="anim-result">
+							<i class="fa fa-check-circle"></i>
+						</div>
+			
+					</div>
+				</div>
+				
+				<div class="tumblr-saving">
+					<h1><i class="fa fa-tumblr-square"></i>&nbsp;Uploading to tumblr&nbsp;</h1>
+					<div class="saving">
+						<div class="anim-saving">saving...</div>
+						<div class="anim-saving">saving...</div>
+						<div class="anim-saving">saving...</div>
+			
+						<div class="anim-result">
+							<i class="fa fa-check-circle"></i>
+						</div>
+			
+					</div>
+				</div>
+				
+			</div>
 		</div>
 		
-	    </div> <!-- /container -->        
+		
+	    <div class="wrapper">
+			<video id="webcam" width="200" height="200"></video>
+	
+			<div class="countdown">
+				<h1></h1>
+			</div>
+
+			<div class="instructions">
+				<h3>Click to take picture!</h3>
+			</div>
+			<!--<input type="button" id="snapPicture" value="Sanp A Picture!" />-->
+			<canvas id="capture" style="display:none;"></canvas>
+			<img id="canvasImg">
+
+			<div class="pic-options hide">
+				<button class="btn retake">Retake</button>
+				<button class="btn saveit">Save Pic</button>
+			</div>
+			
+			<div class="take-pic-btn"></div>
+	    </div> 
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 

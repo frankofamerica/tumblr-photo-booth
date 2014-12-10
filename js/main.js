@@ -3,6 +3,14 @@ $( document ).ready(function() {
 	var element = document.documentElement;
 	var newFileName;
 	var capturedImg = $('#canvasImg');
+	var takePicBtn = $('.take-pic-btn');
+	var instructions = $('.instructions');
+	var countdown = $('.countdown');
+	var fullScreenBtn = $('.fullScreenBtn');
+	var imgSaving = $('.img-saving');
+	var tumblrSaving = $('.tumblr-saving');
+	var overlay = $('.overlay-container ');
+	
 	detectMedia();
 
 	function detectMedia () {
@@ -18,29 +26,30 @@ $( document ).ready(function() {
 	};
 
 	function setBinds() {
+		takePicBtn.on('click', takePic); 
 		//make entire page clickable to take pic
-		$('body').on('click', '.clickable',function(){
-			console.log('hit');
-			hideElement($('.instructions'));
-			$('.wrapper').removeClass('clickable');
-			initCountdown();
-		});	
-	
+
 		//save image that was captured
 		$('.saveit').on('click', function(){
-	
+			overlay.addClass('saving-img');
+			
 			var ajax = new XMLHttpRequest();
 			ajax.open("POST",'writefile.php',true);    
 			ajax.setRequestHeader('Content-Type', 'canvas/upload');
 	
 			ajax.onreadystatechange=function()
 		  	{
-				if (ajax.readyState == 4)
+				if (ajax.readyState == 4 && ajax.status == 200)
 				{ 
 					console.log('SAVED', ajax.responseText);
 					newFileName = ajax.responseText;
-			
+					
+					imgSaved();
+					
 					postToTumblr(newFileName); 
+
+				}else if (ajax.readyState == 4 && ajax.status == 404) {
+					console.log('ERROR SAVING');
 				}
 		  	}
 
@@ -48,12 +57,10 @@ $( document ).ready(function() {
 		});
 	
 		//retake pic
-		$('.retake').on('click', function() {
-			resetStage();
-		});
+		$('.retake').on('click', resetStage);
 	
 		//enable full screen
-		$('.fullScreenBtn').on('click', function () {
+		fullScreenBtn.on('click', function () {
 		  if(element.requestFullscreen) {
 		    element.requestFullscreen();
 		  } else if(element.mozRequestFullScreen) {
@@ -71,29 +78,40 @@ $( document ).ready(function() {
 		    var event = state ? 'FullscreenOn' : 'FullscreenOff';
 			console.log(event);
 			if(event == "FullscreenOff"){
-				$('.fullScreenBtn').css('display', 'block');
+				fullScreenBtn.css('display', 'block');
 			}else if(event == "FullscreenOn"){
-				$('.fullScreenBtn').css('display', 'none');
+				fullScreenBtn.css('display', 'none');
 			} 
 		});
 	};
-
+	
+	function takePic () {
+		console.log('hit');
+		hideElement(instructions);
+		initCountdown();
+		hideElement(takePicBtn);
+	};
+	
+	function imgSaved() {
+		imgSaving.find('.saving').addClass('success');
+	};
+	
 	function resetStage () {
 		showElement($('#webcam'));
-		showElement($('.instructions'));
-		showElement($('.countdown'));
+		showElement(instructions);
+		showElement(countdown);
 		$('.countdown h1').text("");
 		hideElement($('.pic-options'));
 	
 		capturedImg.attr("src", "");
 	
-		$('.wrapper').addClass('clickable');
+		showElement(takePicBtn);
 	};
 
 	//init countdown to take pic
 	function initCountdown() {
 		console.log('countdown!');
-		var sec = 5;
+		var sec = 3;
 		var timer = setInterval(function() {
 		    $('.countdown h1').animate({
 		        opacity: 0.25,
@@ -105,11 +123,11 @@ $( document ).ready(function() {
 		    })
 
 		    if (sec == 0) {
-		        hideElement($('.countdown'));
+		        hideElement(countdown);
 		        clearInterval(timer);
 				picCapture();
 		    }
-		}, 500);
+		}, 1000);
 	};
 
 	function hideElement (ele) {
@@ -163,10 +181,19 @@ $( document ).ready(function() {
 		showElement($('.pic-options'));
 	}
 
-
 	function postToTumblr(img) {
-		var jqxhr = $.post('post_tumblr.php', 'val=' + img, function (response) {
-		  console.log( "success" );
+		tumblrSaving.addClass('uploading');
+		
+		var jqxhr = $.post('post_tumblr.php', 'val=' + img, function (data) {
+		var str = data.substring(data.indexOf('=') +1);
+		  
+		  var obj = jQuery.parseJSON(str);
+		  console.log(obj);
+		  if (obj.meta.status == 201){
+			  imgUploaded();
+		  }else if(obj.meta.status == 401){
+			  console.log('img not uploaded');
+		  }
 		})
 		  .done(function() {
 		    console.log( "second success" );
@@ -178,5 +205,21 @@ $( document ).ready(function() {
 		    console.log( "finished" );
 		});
 
+	};
+	
+	function imgUploaded() {
+		tumblrSaving.find('.saving').addClass('success');
+		
+		var timer = setInterval(function() {
+			clearInterval(timer);
+			resetOverlay();
+			resetStage();
+		}, 2000);
+	};
+	
+	function resetOverlay() {
+		overlay.removeClass('saving-img');
+		imgSaving.find('.saving').removeClass('success');
+		tumblrSaving.find('.saving').removeClass('success');
 	};
 });
