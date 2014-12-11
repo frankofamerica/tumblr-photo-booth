@@ -145,7 +145,7 @@ html {
 		text-align:center;
 		
 		.thank-you {
-			background:#E44C3D;
+			background:$red;
 			color:white;
 		}
 		
@@ -191,23 +191,42 @@ html {
 					}
 				}
 	
-				.fa-check-circle {
+				.fa-check-circle{
 					color:$green;
 					font-size:5em;
-				}
-	
-				.anim-result {
 					display:none;
-		
+				}
+				
+				.fa-times-circle {
+					font-size:5em;
+					display:none;
+					color:$red;
 				}
 	
 				&.success {
 					.anim-result {
-						display:block;
 						-webkit-animation: zoomIn 1s; /* Chrome, Safari, Opera */
 						animation: zoomIn 1s;
+						
+						.fa-check-circle {
+							display:block;
+						}
 					}
-		
+				}
+				
+				&.failed {
+					.anim-result {
+						-webkit-animation: zoomIn 1s; /* Chrome, Safari, Opera */
+						animation: zoomIn 1s;
+						
+						.fa-times-circle {
+							display:block;
+						}
+					}
+				}
+				
+				&.success,
+				&.failed {
 					.anim-saving {
 						display:none;
 					}

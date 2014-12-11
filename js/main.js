@@ -193,7 +193,7 @@ $( document ).ready(function() {
 		  if (obj.meta.status == 201){
 			  imgUploaded();
 		  }else if(obj.meta.status == 401){
-			  console.log('img not uploaded');
+			  failUpload();
 		  }
 		})
 		  .done(function() {
@@ -213,6 +213,16 @@ $( document ).ready(function() {
 		thankyou.html('Photo saved and uploaded!<br>Enjoy the party!');
 		thankyou.css('padding', '1em');
 		
+		resetDelay();
+	};
+	
+	function failUpload () {
+		tumblrSaving.find('.saving').addClass('failed');
+		
+		resetDelay();
+	};
+	
+	function resetDelay() {
 		var timer = setInterval(function() {
 			clearInterval(timer);
 			resetOverlay();
@@ -224,6 +234,10 @@ $( document ).ready(function() {
 		overlay.removeClass('saving-img');
 		imgSaving.find('.saving').removeClass('success');
 		tumblrSaving.find('.saving').removeClass('success');
+		
+		imgSaving.find('.saving').removeClass('failed');
+		tumblrSaving.find('.saving').removeClass('failed');
+		
 		thankyou.text('');
 		thankyou.css('padding', '0');
 	};
