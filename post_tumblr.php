@@ -56,7 +56,7 @@
 	$recentImgPath = "img/pics/".$value.".png";
 	$headers = array("Host" => "http://api.tumblr.com/", "Content-type" => "application/x-www-form-urlencoded", "Expect" => "");
 	$params = array("data" => array(file_get_contents($recentImgPath)),
-	"type" => "photo");
+	"type" => "photo", "tags" => "brnye");
 
 	$blogname = "brnye.tumblr.com";
 	oauth_gen("POST", "http://api.tumblr.com/v2/blog/$blogname/post", $params, $headers);
