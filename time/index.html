@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+        <style>
+		body {
+			background:black;
+		}
+			.clock {
+			  position: relative;
+			  list-style: none;
+			}
+
+			.sec, .min, .hour {
+			  position: absolute;
+			  width: 300px;
+			  height: 300px;
+			  top: 0px;
+			}
+/*
+
+			.sec {
+			  background: url(../img/svg/face.svg);
+			  z-index: 3;
+			}*/
+
+			.face {
+				width:300px;
+				height:300px;
+			}
+			.min {
+			  z-index: 2;
+			  -webkit-transform: rotate(45deg);
+			     -moz-transform: rotate(45deg);
+			     -ms-transform: rotate(45deg);
+			     -o-transform: rotate(45deg);
+			     transform: rotate(45deg);
+			}
+   
+			.hour {
+			  z-index: 1;
+			  -webkit-transform: rotate(45deg);
+			     -moz-transform: rotate(45deg);
+			     -ms-transform: rotate(45deg);
+			     -o-transform: rotate(45deg);
+			     transform: rotate(45deg);
+			}
+        </style>
+
+    </head>
+    <body>
+		<ul class="clock">	
+		  <!--<li id="sec"></li>-->
+		  <li class="face"><img src="../img/svg/face.svg"></li>
+		  <li class="hour"><img src="../img/svg/hour.svg"></li>
+		  <li class="min"><img src="../img/svg/minute.svg"></li>
+		</ul>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    
+		<script>
+			var mins = 15;
+			var hours = 8;
+			
+			var mdegree = mins * 6;
+			var hdegree = hours * 30 + (mins / 2);
+			
+			var mrotate = "rotate(" + mdegree + "deg)";
+			var hrotate = "rotate(" + hdegree + "deg)";
+			
+			$(".min").css({ "transform": mrotate });
+			$(".hour").css({ "transform": hrotate });
+		</script>
+    </body>
+</html>

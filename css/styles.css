@@ -245,8 +245,8 @@ html body .wrapper .pic-options {
   animation-delay: 0s;
 }
 /* line 188, ../sass/styles.scss */
-.overlay-container .overlay .img-saving .saving .anim-saving:last-child,
-.overlay-container .overlay .tumblr-saving .saving .anim-saving:last-child {
+.overlay-container .overlay .img-saving .saving .anim-saving.last,
+.overlay-container .overlay .tumblr-saving .saving .anim-saving.last {
   -webkit-animation-delay: .5s;
   animation-delay: .5s;
 }

@@ -185,7 +185,7 @@ html {
 						animation-delay: 0s;
 					}
 		
-					&:last-child {
+					&.last {
 						-webkit-animation-delay: .5s;
 						animation-delay: .5s;
 					}
