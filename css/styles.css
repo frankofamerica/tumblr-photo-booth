@@ -150,24 +150,27 @@ html body .wrapper .take-pic-btn {
 html body .wrapper .instructions {
   position: absolute;
   top: 5em;
-  left: 5em;
-  background: rgba(63, 103, 104, 0.5);
+  background: rgba(239, 80, 80, 0.75);
   padding: 2em;
   color: white;
+  width: 100%;
+  top: 50%;
+  margin-top: -50px;
 }
-/* line 101, ../sass/styles.scss */
+/* line 103, ../sass/styles.scss */
 html body .wrapper .instructions h3 {
   text-transform: uppercase;
-  font-size: 3em;
+  font-size: 4em;
+  text-align: center;
 }
-/* line 107, ../sass/styles.scss */
+/* line 110, ../sass/styles.scss */
 html body .wrapper .pic-options {
   top: 50px;
   left: 50px;
   position: absolute;
 }
 
-/* line 117, ../sass/styles.scss */
+/* line 120, ../sass/styles.scss */
 .overlay-container {
   width: 100%;
   height: 100%;
@@ -176,7 +179,7 @@ html body .wrapper .pic-options {
   display: none;
   padding-top: 5em;
 }
-/* line 125, ../sass/styles.scss */
+/* line 128, ../sass/styles.scss */
 .overlay-container.saving-img {
   display: block;
   animation-name: slideDown;
@@ -186,7 +189,7 @@ html body .wrapper .pic-options {
   animation-timing-function: ease-out;
   -webkit-animation-timing-function: ease-out;
 }
-/* line 138, ../sass/styles.scss */
+/* line 141, ../sass/styles.scss */
 .overlay-container .overlay {
   width: 70em;
   height: 40em;
@@ -199,17 +202,17 @@ html body .wrapper .pic-options {
   padding: 3em;
   text-align: center;
 }
-/* line 147, ../sass/styles.scss */
+/* line 150, ../sass/styles.scss */
 .overlay-container .overlay .thank-you {
   background: #E44C3D;
   color: white;
 }
-/* line 154, ../sass/styles.scss */
+/* line 157, ../sass/styles.scss */
 .overlay-container .overlay .img-saving h1,
 .overlay-container .overlay .tumblr-saving h1 {
   display: inline-block;
 }
-/* line 158, ../sass/styles.scss */
+/* line 161, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving,
 .overlay-container .overlay .tumblr-saving .saving {
   display: inline-block;
@@ -217,7 +220,7 @@ html body .wrapper .pic-options {
   margin: 5em auto;
   margin: 0 auto;
 }
-/* line 163, ../sass/styles.scss */
+/* line 166, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .anim-saving,
 .overlay-container .overlay .tumblr-saving .saving .anim-saving {
   float: left;
@@ -238,75 +241,75 @@ html body .wrapper .pic-options {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 183, ../sass/styles.scss */
+/* line 186, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .anim-saving:first-child,
 .overlay-container .overlay .tumblr-saving .saving .anim-saving:first-child {
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
 }
-/* line 188, ../sass/styles.scss */
+/* line 191, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .anim-saving.last,
 .overlay-container .overlay .tumblr-saving .saving .anim-saving.last {
   -webkit-animation-delay: .5s;
   animation-delay: .5s;
 }
-/* line 194, ../sass/styles.scss */
+/* line 197, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .fa-check-circle,
 .overlay-container .overlay .tumblr-saving .saving .fa-check-circle {
   color: #6DBB95;
   font-size: 5em;
   display: none;
 }
-/* line 200, ../sass/styles.scss */
+/* line 203, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving .fa-times-circle,
 .overlay-container .overlay .tumblr-saving .saving .fa-times-circle {
   font-size: 5em;
   display: none;
   color: #E44C3D;
 }
-/* line 207, ../sass/styles.scss */
+/* line 210, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving.success .anim-result,
 .overlay-container .overlay .tumblr-saving .saving.success .anim-result {
   -webkit-animation: zoomIn 1s;
   /* Chrome, Safari, Opera */
   animation: zoomIn 1s;
 }
-/* line 211, ../sass/styles.scss */
+/* line 214, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving.success .anim-result .fa-check-circle,
 .overlay-container .overlay .tumblr-saving .saving.success .anim-result .fa-check-circle {
   display: block;
 }
-/* line 218, ../sass/styles.scss */
+/* line 221, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving.failed .anim-result,
 .overlay-container .overlay .tumblr-saving .saving.failed .anim-result {
   -webkit-animation: zoomIn 1s;
   /* Chrome, Safari, Opera */
   animation: zoomIn 1s;
 }
-/* line 222, ../sass/styles.scss */
+/* line 225, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving.failed .anim-result .fa-times-circle,
 .overlay-container .overlay .tumblr-saving .saving.failed .anim-result .fa-times-circle {
   display: block;
 }
-/* line 230, ../sass/styles.scss */
+/* line 233, ../sass/styles.scss */
 .overlay-container .overlay .img-saving .saving.success .anim-saving, .overlay-container .overlay .img-saving .saving.failed .anim-saving,
 .overlay-container .overlay .tumblr-saving .saving.success .anim-saving,
 .overlay-container .overlay .tumblr-saving .saving.failed .anim-saving {
   display: none;
 }
-/* line 237, ../sass/styles.scss */
+/* line 240, ../sass/styles.scss */
 .overlay-container .overlay .tumblr-saving {
   opacity: .4;
 }
-/* line 240, ../sass/styles.scss */
+/* line 243, ../sass/styles.scss */
 .overlay-container .overlay .tumblr-saving.uploading {
   opacity: 1;
 }
-/* line 243, ../sass/styles.scss */
+/* line 246, ../sass/styles.scss */
 .overlay-container .overlay .tumblr-saving.uploading .saving {
   display: inline-block;
 }
-/* line 248, ../sass/styles.scss */
+/* line 251, ../sass/styles.scss */
 .overlay-container .overlay .tumblr-saving .saving {
   display: none;
 }
